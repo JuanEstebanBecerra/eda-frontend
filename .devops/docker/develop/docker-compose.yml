@@ -1,0 +1,14 @@
+services:
+  eda-frontend:
+    image: node:22.5.1
+    container_name: eda-frontend
+    tty: true
+    working_dir: /usr/src/app/
+    volumes:
+      - ../../../:/usr/src/app/
+    networks:
+      - events-network
+
+networks:
+  events-network:
+    external: true
